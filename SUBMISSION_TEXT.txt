@@ -1,0 +1,9 @@
+PROJECT TITLE
+CUDA-Accelerated Image Processing: GPU Grayscale Conversion and Sobel Edge Detection
+
+CODE PROJECT DESCRIPTION
+This project implements a CUDA-based image-processing pipeline that converts an RGB image into grayscale and then applies the Sobel edge-detection operator. The grayscale kernel assigns one GPU thread to each pixel, while the Sobel kernel uses a two-dimensional CUDA grid to process image coordinates and their 3x3 neighborhoods. Input and output image buffers are stored in NVIDIA GPU global memory, and CUDA events are used to measure kernel execution time.
+
+To evaluate correctness, I implemented CPU reference versions of both operations and compared their outputs with the GPU results. The program reports the number of mismatched values and writes the processed images and timing information to files. I also tested different image dimensions and CUDA block sizes to observe how workload size and thread configuration affect execution time. The project helped me understand GPU data parallelism, memory transfers, kernel launch geometry, timing with CUDA events, and the difference between kernel execution time and total application time.
+
+IMPORTANT: Before submission, replace or revise this description to match the tests you actually ran and the results you observed. Do not claim experiments or results that you did not perform.
